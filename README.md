@@ -1,6 +1,6 @@
 # SpanningGraph
 
-Caveat: Version 2.7.14
+Caveat: Python interpreter version 2.7.14
 
 This project is aimed at learning the different procedures when looking for a target state. In this project we have
 covered three different search methods.
