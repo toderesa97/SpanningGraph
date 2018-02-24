@@ -72,4 +72,5 @@ Every node contains a reference to its parent.
 A visual scheme is:
 
 ![bfs](https://user-images.githubusercontent.com/19231158/36636364-b2cef678-19c5-11e8-8481-b227501dfdc4.PNG)
+
 (This awesome depiction was made by https://sketch.io/sketchpad/)
