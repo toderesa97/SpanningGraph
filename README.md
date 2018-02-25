@@ -98,3 +98,48 @@ Output: {S, O, Z}
 
 ![dfs](https://user-images.githubusercontent.com/19231158/36641248-c920ed16-1a2c-11e8-8f06-833ce29d0a09.PNG)
 
+- Using BSS: in every insertion nodes within OL are sorted based upon path_cost attribute (this sttr. is accumulative)
+
+**Chosen points:** from Zerind to Sibiu (Z, S)
+
+Since in every expansion all nodes are sorted, the insertion does not matter at all.
+```
+OL = {Z}
+CL = {}
+    
+Is OL sorted? Pop Z, is Z S? No. Is Z in CL? No.
+OL = {O,A}
+CL = {Z}
+
+Is OL sorted? yes.
+    Z-O = 71
+    Z-A = 75
+
+Pop O, is O S? No. Is O in CL? No.
+OL = {A,Z,S}
+CL = {Z,O}
+
+Is OL sorted? yes.
+    Z-A=75
+    Z-O-Z = 71+71 = 142
+    Z-O-S = 71+151 = 222
+
+Pop A, is A S? No. Is A in CL? No.
+OL = {Z,S,Z,S}
+CL = {Z,O,A}
+
+Is OL sorted? No.
+    Z-O-Z = 142
+    Z-O-S = 222
+    Z-A-Z = 75+75 = 150
+    Z-A-S = 75+140 = 215  
+    
+sort, OL = {Z, Z, S, S}
+Pop Z, Is Z S? No. Is Z in CL? Yes.
+OL = {Z,S,S}
+Pop Z, Is Z S? No. Is Z in CL? Yes.
+OL = {S,S}
+Pop S, Is S S? Yes.
+
+Output: Z-A-S (path cost = 75+140 = 215) 
+```
