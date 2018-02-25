@@ -143,3 +143,5 @@ Pop S, Is S S? Yes.
 
 Output: Z-A-S (path cost = 75+140 = 215) 
 ```
+
+As you might have noticed, **they are greedy algorithms**, hence not suitable for large maps.
