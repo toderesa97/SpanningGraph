@@ -41,7 +41,7 @@ Sibui = S;
 Rimnicu Vilcea = R
 
 
-- Using BFS
+- Using BFS: all nodes belonging to a certain depth are first scanned before diving into the next level
 
 ```
 OL= {Z}
@@ -74,3 +74,27 @@ A visual scheme is:
 ![bfs](https://user-images.githubusercontent.com/19231158/36636364-b2cef678-19c5-11e8-8481-b227501dfdc4.PNG)
 
 (This awesome depiction was made using https://sketch.io/sketchpad/)
+
+- Using DFS: a node is scanned until the lowest leaves (a node with no children)
+
+```
+OL = {Z}
+CL = {}
+
+Pop Z, is Z the final state (ie, S)? No. Is Z in CL? No
+OL = {O,A}
+CL = {Z}
+
+Pop O, is O S? No. Is O in CL? No.
+OL = {O,S,A}
+CL = {Z, O}
+
+Pop O, is O S? No. Is O in CL? Yes.
+Ol = {S,A}
+Pop S, is S S? Yes.
+
+Output: {S, O, Z}
+```
+
+![dfs](https://user-images.githubusercontent.com/19231158/36641248-c920ed16-1a2c-11e8-8f06-833ce29d0a09.PNG)
+

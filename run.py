@@ -2,7 +2,7 @@
 
 import search
 
-ab = search.GPSProblem('Z', 'S', search.romania)
+ab = search.GPSProblem('F', 'C', search.romania)
 
 print(search.breadth_first_graph_search(ab).path())
 print(search.depth_first_graph_search(ab).path())
