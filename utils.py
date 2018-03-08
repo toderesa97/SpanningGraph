@@ -756,8 +756,8 @@ class PathCost(Queue):
 
 class Heuristic(Queue):
 
-    def __init__(self, goal):
-        self.goal = goal
+    def __init__(self, problem):
+        self.problem = problem
         self.A = []
         self.exp = 0
 
@@ -767,7 +767,7 @@ class Heuristic(Queue):
     def extend(self, items):
         self.A.extend(items)
         self.exp = self.exp + 1
-        return self.A.sort(key=lambda x: (x.path_cost+int(self.goal(x))), reverse=True)
+        return self.A.sort(key=lambda x: (x.path_cost+int(self.problem.h(x))), reverse=True)
 
     def pop(self):
         return self.A.pop()

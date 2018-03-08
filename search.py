@@ -149,7 +149,7 @@ def search_based_upon_cost(problem):
 
 
 def using_heuristic(problem):
-    heu = Heuristic(problem.h)
+    heu = Heuristic(problem)
     str = graph_search(problem, heu)
     print(heu.exp)
     return str
