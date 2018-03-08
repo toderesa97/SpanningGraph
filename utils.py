@@ -13,6 +13,7 @@ import operator, math, random, copy, sys, os.path, bisect
 # 3 years old). The first part of this file brings you up to 2.4
 # compatibility if you are running in Python 2.2 or 2.3:
 
+
 try:
     bool, True, False  ## Introduced in 2.3
 except NameError:
@@ -739,17 +740,37 @@ class PathCost(Queue):
 
     def __init__(self):
         self.A = []
+        self.ex = 0
 
     def append(self, item):
         self.A.append(item)
 
     def extend(self, items):
         self.A.extend(items)
+        self.ex = self.ex + 1
         return self.A.sort(key=lambda x: x.path_cost, reverse=True)
 
     def pop(self):
         return self.A.pop()
 
+
+class Heuristic(Queue):
+
+    def __init__(self, goal):
+        self.goal = goal
+        self.A = []
+        self.exp = 0
+
+    def append(self, item):
+        self.A.append(item)
+
+    def extend(self, items):
+        self.A.extend(items)
+        self.exp = self.exp + 1
+        return self.A.sort(key=lambda x: (x.path_cost+int(self.goal(x))), reverse=True)
+
+    def pop(self):
+        return self.A.pop()
 
 
 class FIFOQueue(Queue):

@@ -142,7 +142,18 @@ def depth_first_graph_search(problem):
     return graph_search(problem, Stack())
 
 def search_based_upon_cost(problem):
-    return graph_search(problem, PathCost())
+    pa = PathCost()
+    str = graph_search(problem, pa)
+    print(pa.ex)
+    return str
+
+
+def using_heuristic(problem):
+    heu = Heuristic(problem.h)
+    str = graph_search(problem, heu)
+    print(heu.exp)
+    return str
+
 
 def depth_limited_search(problem, limit=50):
     """[Fig. 3.12]"""
