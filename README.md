@@ -7,7 +7,7 @@ covered three different search methods:
 
 - Breadth-first search (BFS)
 - Depth-first search (DFS)
-- Breadth-sorted search (BSS) [Actually it is more like Branch and Bounce]
+- Breadth-sorted search (BSS) [Actually it is more like Branch and Bound]
 - Combining sorted search with heuristic
 
 This methods builds a tree by examining the nodes of the graph. The process is referred as spanning tree.
@@ -151,6 +151,6 @@ As you might have noticed, **they are greedy algorithms**, hence not suitable fo
 
 This method sorts not only based on path_cost but the heuristic of every node (city). You can understand the heuristic 
 as the distance between such city and the final state (distances are measured roughly). There is a method
-within ``GPSProblem`` called ``h(self, node)`` which retrieves such distance between node and final state in question.
+within ``GPSProblem`` called ``h(self, node)`` which retrieves such distance between node and the final state in question.
 
 Obviously the expanded nodes are less using the heuristic method rather than the BSS method.
