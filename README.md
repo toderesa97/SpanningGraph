@@ -20,7 +20,7 @@ Such searches have been implemented using two lists:
 
 - Open List (OL): stores nodes that are pending to be analysed. Depending on the search
     method a new set of nodes are inserted by its front or back. There is a subtle modification regarding BSS.
-- Close List (CL): a list comprised by nodes already analysed. If a node that is being analysed is contained
+- Close List (CL): a list comprised of nodes already analysed. If a node that is being analysed is contained
      within this list, this node is discarded. The node is ditched because a loop has been discovered.
 
 ### What is the code expected to do?
